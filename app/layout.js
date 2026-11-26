@@ -28,7 +28,6 @@ export default function RootLayout({ children }) {
             <nav aria-label="Main navigation">
               <Link href="/#projects">Projects</Link>
               <Link href="/contact">Contact</Link>
-              <a href={site.github}>GitHub <span aria-hidden="true">↗</span></a>
             </nav>
           </header>
           {children}
