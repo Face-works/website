@@ -1,5 +1,5 @@
 const name = "Faceworks";
-const description = "We are Faceworks. We build desktop software with familiar interfaces and share our work on GitHub.";
+const description = "We are Faceworks. We build desktop apps with familiar controls that feel at home on your system.";
 const logo = "/face.png";
 
 export const site = {
