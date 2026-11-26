@@ -3,22 +3,11 @@ import face from "../public/face.png";
 
 const github = "https://github.com/Face-works";
 const email = "mailto:contact@faceworks.dev";
-const projects = [
-  {
-    name: "Nativium",
-    kind: "Browser",
-    description: "A degoogled Chromium browser with a native UI. Includes WinUI, WebKit, GTK, and Qt.",
-    icon: "browser",
-    technologies: ["Chromium", "WinUI", "WebKit", "GTK", "Qt"],
-  },
-  {
-    name: "UI Toolkit",
-    kind: "Developer library",
-    description: "A C library for building desktop interfaces with native controls across platforms.",
-    icon: "toolkit",
-    technologies: ["C", "Native UI"],
-  },
-];
+const nativium = {
+  github: "https://github.com/Face-works/nativium",
+  download: "https://nativium.faceworks.dev",
+  technologies: ["WinUI", "WebKit", "GTK", "Qt"],
+};
 
 export default function Home() {
   return (
@@ -54,21 +43,38 @@ export default function Home() {
 
         <section id="projects" className="projects" aria-labelledby="projects-title">
           <h2 id="projects-title">Projects</h2>
-          <div className="project-grid">
-            {projects.map((project) => (
-              <article className="card" key={project.name}>
-                <div className="card-top">
-                  <span className={`icon ${project.icon}`} aria-hidden="true"><i /></span>
-                  <span className="kind">{project.kind}</span>
+          <article className="project" aria-labelledby="nativium-title">
+            <div className="project-intro">
+              <div>
+                <h3 id="nativium-title">Nativium</h3>
+                <p>A degoogled Chromium browser with an interface designed to feel at home on your desktop.</p>
+                <div className="actions">
+                  <a className="button primary" href={nativium.download}>Download <span aria-hidden="true">↗</span></a>
+                  <a className="button" href={nativium.github}>GitHub <span aria-hidden="true">↗</span></a>
                 </div>
-                <h3>{project.name}</h3>
-                <p>{project.description}</p>
+              </div>
+              <div className="browser-art" aria-hidden="true">
+                <div className="browser-window">
+                  <div className="browser-tab"><i /> Nativium</div>
+                  <div className="browser-toolbar"><span>← → ↻</span><i /></div>
+                  <div className="browser-page"><span>✳</span></div>
+                </div>
+              </div>
+            </div>
+            <div className="project-details">
+              <section>
+                <h4>Degoogled Chromium</h4>
+                <p>Built on Chromium for web compatibility, with Google-specific integrations reduced.</p>
+              </section>
+              <section>
+                <h4>Native look and feel</h4>
+                <p>Nativium takes its interface cues from desktop toolkits, so the browser feels like part of the system.</p>
                 <ul className="technologies" aria-label="Technologies">
-                  {project.technologies.map((name) => <li key={name}>{name}</li>)}
+                  {nativium.technologies.map((name) => <li key={name}>{name}</li>)}
                 </ul>
-              </article>
-            ))}
-          </div>
+              </section>
+            </div>
+          </article>
         </section>
       </main>
 
